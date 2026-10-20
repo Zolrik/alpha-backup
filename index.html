@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alpha Backup — sauvegarde personnelle</title>
+<style>
+  :root{--bg:#0f1115;--fg:#e8ebf0;--dim:#9aa4b2;--acc:#4da3ff;--line:#242a35}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:34px}
+  h1{font-size:1.9rem;margin:0 0 8px}
+  .tag{color:var(--dim);font-size:.95rem}
+  h2{font-size:1.12rem;margin:34px 0 10px;color:var(--acc)}
+  p,li{color:var(--fg)}
+  ul{padding-left:20px}
+  li{margin:6px 0}
+  a{color:var(--acc)}
+  .box{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:22px 0;background:#141822}
+  footer{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--dim);font-size:.9rem}
+  code{background:#1a1f2a;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Alpha Backup</h1>
+  <div class="tag">Sauvegarde automatisée d'un assistant personnel auto-hébergé — projet privé, usage strictement personnel</div>
+</header>
+
+<h2>À quoi sert cette application</h2>
+<p><strong>Alpha Backup</strong> est un outil personnel qui sauvegarde la configuration de mon assistant auto-hébergé (fichiers de configuration, scripts, notes et base de données locale) vers <strong>mon propre espace Google Drive</strong>. Son unique fonction est de produire une archive quotidienne et de la déposer dans un dossier dédié du Drive de son propriétaire, afin de pouvoir restaurer le système en cas de panne.</p>
+
+<h2>Ce que fait l'application</h2>
+<ul>
+  <li>Crée une archive compressée de mes fichiers de configuration sur mon propre serveur (NAS, à mon domicile).</li>
+  <li>Envoie cette archive dans un dossier nommé <code>alpha_backup</code> de mon compte Google Drive.</li>
+  <li>Vérifie que le transfert est complet (taille et empreinte de contrôle).</li>
+  <li>Conserve les cinq dernières archives et supprime les plus anciennes.</li>
+</ul>
+
+<h2>Ce qu'elle ne fait pas</h2>
+<ul>
+  <li>Elle n'accède à aucun autre fichier du Drive que ceux qu'elle crée elle-même.</li>
+  <li>Elle ne lit, ne modifie et ne supprime aucun document personnel.</li>
+  <li>Elle n'envoie aucune donnée à un tiers : la seule destination est le Drive de son propriétaire.</li>
+  <li>Elle ne comporte ni publicité, ni traceur, ni outil de mesure d'audience.</li>
+</ul>
+
+<div class="box">
+  <strong>Qui l'utilise ?</strong> Une seule personne : le propriétaire du compte Google concerné, qui est aussi l'exploitant du serveur. L'application n'est pas distribuée et n'a aucun autre utilisateur.
+</div>
+
+<h2>Documents légaux</h2>
+<ul>
+  <li><a href="privacy.html">Politique de confidentialité</a> — quelles données Google sont utilisées, et comment.</li>
+  <li><a href="terms.html">Conditions d'utilisation</a> — cadre d'utilisation de l'application.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Pour toute question relative à cette application ou aux données Google qu'elle utilise : <a href="mailto:alpha1pulsar2@gmail.com">alpha1pulsar2@gmail.com</a></p>
+
+<footer>
+  Alpha Backup · projet personnel, non commercial · Dernière mise à jour : <span id="d">2026</span>
+  <script>document.getElementById('d').textContent = new Date().toISOString().slice(0,10);</script>
+</footer>
+</div>
+</body>
+</html>
